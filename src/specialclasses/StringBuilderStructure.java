@@ -1,4 +1,4 @@
-package datastructures;
+package specialclasses;
 
 public class StringBuilderStructure {
 	/**

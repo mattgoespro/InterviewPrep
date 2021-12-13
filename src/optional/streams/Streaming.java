@@ -1,4 +1,4 @@
-package datastructures;
+package optional.streams;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -118,6 +118,25 @@ public class Streaming {
 			Stream.of(6,43,123,6523)
             .map(reverseInt)
 			.toList()
+		);
+		
+		// Comparators can also be used as lambdas.
+		Comparator<Integer> compareIntArray = (o1,o2)-> {
+			if(o1 > o2) {
+				return 1;
+			} else if(o1 < o2) {
+				return -1;
+			}
+			
+			return 0;
+		};
+		
+		System.out.println(
+				Arrays.compare(
+						new Integer[]{1, 2, 3, 4},
+						new Integer[]{1, 2, 3, 2},
+						compareIntArray
+				)
 		);
 	}
 }

@@ -35,7 +35,7 @@ class TestInterfaceRules implements InterfaceRules {
 	
 	@Override
 	public void ruleOne() {
-	
+		// impl
 	}
 	
 	@Override
