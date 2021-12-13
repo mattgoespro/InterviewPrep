@@ -20,5 +20,6 @@ IntelliJ. On the left, click _Plugins_. Search _Eclipse Keymap_ and click _Insta
 
 ### IDE Settings
 
-The project relies on the Lombok Gradle project to reduce boilerplate code, which requires annotation processing to be enabled.
-To enable: File | Settings | Build, Execution, Deployment | Compiler | Annotation Processors, turn on Annotation Processing.
+The project relies on the Lombok Gradle project to reduce boilerplate code, which requires annotation processing to be
+enabled. To enable: File | Settings | Build, Execution, Deployment | Compiler | Annotation Processors, turn on
+_Annotation Processing_.
