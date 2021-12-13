@@ -17,3 +17,8 @@ dependencies.
 
 You can download the Eclipse Keymap plugin if you’re used to working in Eclipse. Download the plugin by opening
 IntelliJ. On the left, click _Plugins_. Search _Eclipse Keymap_ and click _Install_.
+
+### IDE Settings
+
+The project relies on the Lombok Gradle project to reduce boilerplate code, which requires annotation processing to be enabled.
+To enable: File | Settings | Build, Execution, Deployment | Compiler | Annotation Processors, turn on Annotation Processing.
