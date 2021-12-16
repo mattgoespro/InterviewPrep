@@ -74,4 +74,4 @@ gradle-app.setting
 **/build/
 
 # Other types
-*.pdf
+pdf/
