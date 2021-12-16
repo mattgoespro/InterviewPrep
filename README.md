@@ -31,9 +31,6 @@ _Annotation Processing_.
 
 ### Resources
 
-* [Cracking the Coding Interview (**
-  PDF**)](http://englishonlineclub.com/pdf/Cracking%20the%20Coding%20Interview%20-%20189%20Programming%20Questions%20and%20Solutions%20(6th%20Edition)%20[EnglishOnlineClub.com].pdf)
-* [60 Java Interview Questions (**
-  Online**)](https://svrtechnologies.com/2020-latest-60-java-interview-questions-and-answers-pdf/)
-* [TutorialsPoint - Java Interview Questions (**
-  PDF**)](https://www.tutorialspoint.com/java/pdf/java_interview_questions.pdf)
+* [Cracking the Coding Interview (**PDF**)](http://englishonlineclub.com/pdf/Cracking%20the%20Coding%20Interview%20-%20189%20Programming%20Questions%20and%20Solutions%20(6th%20Edition)%20[EnglishOnlineClub.com].pdf)
+* [60 Java Interview Questions (**Online**)](https://svrtechnologies.com/2020-latest-60-java-interview-questions-and-answers-pdf/)
+* [TutorialsPoint - Java Interview Questions (**PDF**)](https://www.tutorialspoint.com/java/pdf/java_interview_questions.pdf)
