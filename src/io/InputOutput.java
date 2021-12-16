@@ -2,11 +2,45 @@ package io;
 
 import java.io.*;
 import java.net.URL;
+import java.util.Scanner;
+
+import static java.nio.file.Files.createFile;
 
 public class InputOutput {
 	public static void main(String[] args) {
 		InputOutput.ioFilesOnFileSystem();
 		InputOutput.ioFilesInResources();
+		System.out.println("Scanning file");
+		InputOutput.ioFilesOnFileSystemScanner();
+	}
+	
+	private static void ioFilesOnFileSystemScanner() {
+		File file = InputOutput.createFile();
+		
+		try (Scanner fileScanner = new Scanner(file)) {
+			while (fileScanner.hasNextLine()) {
+				System.out.println(fileScanner.nextLine());
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private static File createFile() {
+		File file = new File("test.txt");
+		
+		if (!file.exists()) {
+			try {
+				file.createNewFile();
+				FileWriter writer = new FileWriter(file);
+				writer.write("Hello\nWorld");
+				writer.close(); // Flushes the stream (does the write)
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		return file;
 	}
 	
 	static void ioFilesInResources() {
@@ -20,7 +54,9 @@ public class InputOutput {
 			File file = new File(resourceUrl.getFile());
 			BufferedReader reader = new BufferedReader(new FileReader(file));
 			System.out.println("Reading file content from file reader: " + reader.readLine());
-		} catch (Exception e) {
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}

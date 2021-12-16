@@ -5,7 +5,10 @@ import lombok.Getter;
 
 import java.util.*;
 import java.util.function.*;
-import java.util.stream.*;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
+import java.util.stream.Stream;
 
 public class Streaming {
 	public static void main(String[] args) {

@@ -25,7 +25,14 @@ public class UtilityMethods {
 		List<Integer> intList = Arrays.asList(4, 6, 23, 765, 23, 2565, 456, 213); // create List.
 		int[] nativeInts = new Random().ints(10).toArray();
 		Arrays.sort(intList.toArray()); // sort array.
-		Arrays.sort(intList.toArray(), (num1, num2) -> (int) num1 >= (int) num2 ? -1 : 1); // sort array with Comparator
+		// sort array with Comparator
+		Arrays.sort(intList.toArray(), (num1, num2) -> {
+			int n1 = (int) num1, n2 = (int) num2;
+			if (n1 > n2) {
+				return 1;
+			}
+			return n1 == n2 ? 0 : -1;
+		});
 		
 		// Random
 		Random random = new Random();
@@ -34,6 +41,22 @@ public class UtilityMethods {
 		// Collectors
 		Collectors.toList(); // collect to list
 		Collectors.toSet(); // collect to set
-		Collectors.toMap(k -> k, v -> v); // collect to map using key and value mapper functions
+		
+		// collect to map using key and value mapper functions
+		String x = "abcdef";
+		Map m = List.of(1, 2, 3, 4, 5).stream().collect(Collectors.toMap(x::charAt, v -> v));
+		System.out.println(m);
+		
+		// UUIDs
+		UUID randomUUID = UUID.randomUUID(); // generate random UUID
+		System.out.println("Random UUID: " + randomUUID);
+		UUID myUUID = new UUID(234, 45675674); // generate manually
+		System.out.println("My UUID: " + myUUID);
+		UUID UUIDfromString = UUID.fromString("27110ca2-09c0-4ebf-a08d-2a0f744ed764");
+		System.out.println("Convert from String to UUID: " + UUIDfromString);
+		
+		// Scanner
+		Scanner scanner = new Scanner("1,2,false").useDelimiter(",");
+		System.out.format("Scanning values: %d %d %s", scanner.nextInt(), scanner.nextInt(), scanner.nextBoolean());
 	}
 }
