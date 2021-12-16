@@ -1,4 +1,4 @@
-package specialclasses;
+package miscellaneous;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -8,9 +8,6 @@ public class UtilityMethods {
 		// Integer class.
 		// convert int to binary string padded with spaces on the left.
 		String binaryString = Integer.toBinaryString(123);
-		
-		// String class.
-		String welcome = String.format("My name is %s and I am %d years old.", "Matt", 25);
 		
 		// Collections class.
 		List<Integer> list = Arrays.asList(1, 2, 3);

@@ -57,7 +57,7 @@ out/
 *.tar.gz
 *.rar
 
-### Gradle ###
+# Gradle
 .gradle
 build/
 
@@ -70,5 +70,8 @@ gradle-app.setting
 # Cache of project
 .gradletasknamecache
 
-### Gradle Patch ###
+# Gradle Patch
 **/build/
+
+# Other types
+*.pdf

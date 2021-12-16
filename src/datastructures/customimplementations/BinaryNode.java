@@ -1,4 +1,4 @@
-package datastructures;
+package datastructures.customimplementations;
 
 import lombok.AllArgsConstructor;
 

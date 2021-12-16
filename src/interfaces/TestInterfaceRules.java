@@ -9,7 +9,7 @@ interface InterfaceRules {
 	int STATIC_VARIABLE = 0;
 	
 	/**
-	 * Interface methods are implicity declared as <code><i style="font-weight: 200; color:
+	 * Interface methods are implicitly declared as <code><i style="font-weight: 200; color:
 	 * orange">public abstract</i></code>.
 	 */
 	void ruleOne();

@@ -1,26 +1,23 @@
 package interfaces;
 
-import java.util.Arrays;
+import lombok.AllArgsConstructor;
 
-public class ComparableCar implements Comparable {
+import java.util.*;
+
+@AllArgsConstructor
+class ComparableCar implements Comparable<ComparableCar> {
 	int kph;
 	int cost;
 	
-	public ComparableCar(int kph, int cost) {
-		this.kph = kph;
-		this.cost = cost;
-	}
-	
 	@Override
-	public int compareTo(Object o) {
-		if (o instanceof ComparableCar) {
-			ComparableCar c = (ComparableCar) o;
+	public int compareTo(ComparableCar car) {
+		if (car != null) {
 			int thisRating = this.kph * this.cost;
-			int cRating = c.kph * c.cost;
+			int carRating = car.kph * car.cost;
 			
-			if (thisRating > cRating) {
+			if (thisRating > carRating) {
 				return 1;
-			} else if (thisRating == cRating) {
+			} else if (thisRating == carRating) {
 				return 0;
 			}
 			
@@ -29,10 +26,12 @@ public class ComparableCar implements Comparable {
 		
 		return 0;
 	}
-	
+}
+
+class ComparatorCar implements Comparator<ComparableCar> {
 	@Override
-	public String toString() {
-		return "Rating: " + this.kph * this.cost;
+	public int compare(ComparableCar car1, ComparableCar car2) {
+		return car1.compareTo(car2);
 	}
 }
 
@@ -49,5 +48,15 @@ class CompareCars {
 		System.out.println(Arrays.stream(cars).toList());
 		Arrays.sort(cars);
 		System.out.println(Arrays.stream(cars).toList());
+		
+		ArrayList<ComparableCar> carList = new ArrayList<>(List.of(
+				new ComparableCar(100, 3000),
+                 new ComparableCar(100,2),
+                 new ComparableCar(20, 20),
+                 new ComparableCar(3, 500),
+                 new ComparableCar(12, 20)));
+		System.out.println(carList);
+		Collections.sort(carList, new ComparatorCar());
+		System.out.println(carList);
 	}
 }

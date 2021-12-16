@@ -1,4 +1,4 @@
-package datastructures;
+package datastructures.customimplementations;
 
 public class LinkedListImpl {
 	static class Node {
