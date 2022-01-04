@@ -1,7 +1,10 @@
 package miscellaneous;
 
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class UtilityMethods {
 	public static void main(String[] args) {
@@ -55,5 +58,18 @@ public class UtilityMethods {
 		// Scanner
 		Scanner scanner = new Scanner("1,2,false").useDelimiter(",");
 		System.out.format("Scanning values: %d %d %s", scanner.nextInt(), scanner.nextInt(), scanner.nextBoolean());
+		
+		scanner = new Scanner("4, 4, 4, 3, 2.5, 3.25, 5.5, 4,5, 5, 3, 2, 2.5, 1, 5, 7, 4, 3, 3, 3, 3, 4, 4, 4, 6, 6, " + "3, 3").useDelimiter(
+				",");
+		int s = 0;
+		while (scanner.hasNext()) {
+			s += Double.parseDouble(scanner.next().trim());
+		}
+	}
+	
+	public static List<String> generateRandomStrings(int stringLength, int listLength) {
+		return Stream.generate(() -> RandomStringUtils.randomAlphabetic(stringLength).toLowerCase())
+				.limit(listLength)
+				.toList();
 	}
 }
