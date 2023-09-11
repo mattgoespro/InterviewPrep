@@ -25,7 +25,7 @@ public class Incrementer implements Iterable<Integer> {
   }
 
   @Override
-  public Iterator iterator() {
+  public Iterator<Integer> iterator() {
     return new IncrementerIterator(this);
   }
 }

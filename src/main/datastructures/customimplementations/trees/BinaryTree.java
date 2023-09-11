@@ -8,7 +8,7 @@ class BinaryTree<V> {
     return this.getTreeNodeString(this.root, "");
   }
 
-  public String getTreeNodeString(BinaryNode node, String line) {
+  public String getTreeNodeString(BinaryNode<V> node, String line) {
     if (node.left == null && node.right == null) {
       line += " " + node.value;
       return line;
@@ -28,7 +28,11 @@ class BinaryTree<V> {
     this.preOrderTraversal(this.root);
   }
 
-  private void inOrderTraversal(BinaryNode node) {
+  public void printPostOrderTraversal() {
+    this.postOrderTraversal(this.root);
+  }
+
+  private void inOrderTraversal(BinaryNode<V> node) {
     if (node.left != null) {
       this.inOrderTraversal(node.left);
     }
@@ -40,7 +44,7 @@ class BinaryTree<V> {
     }
   }
 
-  private void preOrderTraversal(BinaryNode node) {
+  private void preOrderTraversal(BinaryNode<V> node) {
     System.out.println(node.value);
 
     if (node.left != null) {
@@ -52,7 +56,7 @@ class BinaryTree<V> {
     }
   }
 
-  private void postOrderTraversal(BinaryNode node) {
+  private void postOrderTraversal(BinaryNode<V> node) {
     if (node.left != null) {
       this.preOrderTraversal(node.left);
     }

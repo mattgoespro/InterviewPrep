@@ -8,10 +8,9 @@ import java.util.stream.Stream;
 
 public class SpecialClasses {
   public static void main(String[] args) {
-    Map<String, String> map =
-        Map.of(
-            "Matthew", "Young", "Caleb", "Bell", "James", "Murray", "Andre", "Venter", "Eric",
-            "Dai", "Robby", "Bodley", "Chris", "Marrow", "Robert", "Edwards");
+    Map<String, String> map = Map.of(
+        "Matthew", "Young", "Caleb", "Bell", "James", "Murray", "Andre", "Venter", "Eric",
+        "Dai", "Robby", "Bodley", "Chris", "Marrow", "Robert", "Edwards");
     SpecialClasses.normalHashMap(map);
     SpecialClasses.linkedHashMap(map);
     SpecialClasses.treeMap(map);
@@ -21,8 +20,7 @@ public class SpecialClasses {
     String s = sc.nextLine();
     if (s.toUpperCase().startsWith("Y")) {
       sc.close();
-      List<String> stringList =
-          Stream.generate(() -> RandomStringUtils.randomAlphabetic(5)).limit(1000000).toList();
+      List<String> stringList = Stream.generate(() -> RandomStringUtils.randomAlphabetic(5)).limit(1000000).toList();
       SpecialClasses.stringBuilder(stringList);
     }
   }
@@ -71,12 +69,11 @@ public class SpecialClasses {
     maxHeap.addAll(items);
     System.out.println(maxHeap.peek());
     System.out.println("Next: " + maxHeap.poll());
-    Comparator<String> compareLastChar =
-        (string1, string2) -> {
-          int last1 = string1.charAt(string1.length() - 1);
-          int last2 = string2.charAt(string2.length() - 1);
-          return last1 - last2;
-        };
+    Comparator<String> compareLastChar = (string1, string2) -> {
+      int last1 = string1.charAt(string1.length() - 1);
+      int last2 = string2.charAt(string2.length() - 1);
+      return last1 - last2;
+    };
     Queue<String> orderedByLastLetter = new PriorityQueue<>(compareLastChar);
     List<String> randomStrings = UtilityMethods.generateRandomStrings(10, 5);
     System.out.println("Random strings: " + randomStrings);
@@ -98,6 +95,7 @@ public class SpecialClasses {
     for (String word : words) {
       badSentence += word;
     }
+    System.out.println("Bad sentence:" + badSentence);
     long endTime = System.nanoTime();
     System.out.println(
         "Bad way to concatenate strings took "
@@ -113,6 +111,7 @@ public class SpecialClasses {
     }
     endTime = System.nanoTime();
     String result = sentenceBuilder.toString(); // NB: convert back to string
+    System.out.println("Good sentence:" + result);
     System.out.println(
         "Good way to concatenate strings took "
             + (endTime - currentTime) / Math.pow(10, 9)
